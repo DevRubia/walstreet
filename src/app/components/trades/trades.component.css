@@ -1,0 +1,77 @@
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin: 0 !important;
+     padding: 0;
+     background-color: #e6e6e6;
+     color: #444;
+
+ }
+.tittle{
+    
+    padding-left: 35%;
+}
+
+ .header {
+
+     background-color: #2f4f4f;
+     color: #fff;
+     text-align: center;
+     padding: 15px 0;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .navbar {
+
+     background-color: #2f4f4f;
+     display: flex;
+     justify-content: space-around;
+     /* Adjusted to space-around for even spacing */
+     padding: 10px 7%;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .navbar a {
+     text-decoration: none;
+     color: #fff;
+     font-weight: 600;
+     padding: 10px 20px;
+     border-radius: 25px;
+     transition: background-color 0.3s ease;
+ }
+
+ .navbar a:hover {
+     background-color: #128c7e;
+ }
+
+ .navbar a.active {
+     background-color: #128c7e;
+     border: none;
+ }
+
+ .content {
+     padding: 30px 5%;
+     background-color: #fff;
+     border-radius: 5px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     margin: 20px 5%;
+ }
+
+ .navbar {
+     /* ... existing styles ... */
+     flex-wrap: wrap;
+ }
+
+ @media (max-width: 600px) {
+     .navbar a {
+         width: calc(50% - 20px);
+         /* minus 20px for padding */
+         box-sizing: border-box;
+         /* to include padding in width */
+         margin-bottom: 10px;
+         text-align: center;
+         /* to center the text in the links */
+     }
+ }
+ .spacer {
+     flex: 1 1 auto;
+ }

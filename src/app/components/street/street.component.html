@@ -1,0 +1,52 @@
+<body>
+<mat-toolbar class="header" color="primary">
+    <span class="tittle">WallStreet</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="profileMenu">
+        <mat-icon>account_circle</mat-icon>
+
+    </button>
+    <mat-menu #profileMenu="matMenu">
+        <a mat-menu-item href="#">Profile</a>
+        <a mat-menu-item href="#">Logout</a>
+    </mat-menu>
+</mat-toolbar>
+    <div class="navbar">
+
+    <a routerLink="/street" class="active" routerLinkActive="active">Street</a>
+    <a routerLink="/calendar" class="" routerLinkActive="active">Calendar</a>
+    <a routerLink="/chart" class="" routerLinkActive="active">Chart</a>
+    <a routerLink="/trades" class="" routerLinkActive="active">Trades</a>
+    <a routerLink="/chats" class="" routerLinkActive="active">Chats</a>
+    </div>
+    <div class="content">
+       
+      
+        <div>
+            <button *ngIf="!latitude && !longitude" mat-raised-button color="primary" (click)="getLocation()">Get My
+                Location</button>
+            <p></p>
+            <button *ngIf="latitude && longitude" mat-raised-button color="primary"
+                (click)="clearLocation()">ClearCurrentLocation()</button>
+            <p></p>
+            <p *ngIf="latitude && longitude">
+                current Location On Map is : <br />
+                Latitude: {{ latitude }}, Longitude: {{ longitude }}<br /></p>
+            <p matBadge="1" matBadgeOverlap="false" class="demo-section" *ngIf="locationName">
+                Location Name:<br />
+                {{ name }}
+            </p>
+            <p matBadge="1" matBadgeOverlap="false" class="demo-section" *ngIf="locationName">
+                MyProximity:<br />
+                {{ locationName }}
+            </p>
+            <button *ngIf="latitude && longitude" mat-raised-button color="primary">SaveToMyRoutes()</button>
+            <p></p>
+            <div id="map" style="width: 100%; height: 500px;"></div>
+            <p></p>
+            
+        
+        </div>
+
+    </div>
+</body>
